@@ -1,0 +1,72 @@
+.ps-main-container{
+    height: 87vh;
+    width: 99vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.ps-container-1{
+    border: 1px solid rgb(255, 255, 255);
+    width: 30rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.ps-container-2{
+    border: 1px solid rgb(255, 255, 255);
+    width: 30rem;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.ps-basic-container,.ps-advance-container,.ps-supreme-container{
+    border: 1px solid rgb(255, 255, 255);
+    width: 20rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ps-basic-container:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+.ps-advance-container:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+.ps-supreme-container:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.ps-detail-container h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+  }
+  
+  .ps-detail-container.fade-out h1 {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  
+  .ps-detail-container.fade-in h1 {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  

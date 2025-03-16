@@ -11,7 +11,7 @@ const HomePage = () => {
         
       </div>
       <div className="home-button-container">
-      <div className="home-buttons"><a href="/"><button>Paid Sensi</button></a></div>
+      <div className="home-buttons"><a href="/PaidSensi"><button>Paid Sensi</button></a></div>
       <div className="home-buttons"><a href="/"><button>Paid Optimization</button></a></div>
       </div>
       <div className="home-social-links">
