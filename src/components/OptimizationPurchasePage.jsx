@@ -7,19 +7,15 @@ const OptimizationPurchasePage = () => {
   const location = useLocation();
   const [selectedPlan, setSelectedPlan] = useState(null);
   
-  // Extract the plan from URL query parameters
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const plan = queryParams.get('plan');
     if (plan) {
-      // Remove the "-optimization" suffix if present
       setSelectedPlan(plan.replace('-optimization', ''));
     }
   }, [location]);
 
-  // WhatsApp click handler
   const handleWhatsAppClick = () => {
-    // Replace with your actual WhatsApp number
     const phoneNumber = "916205290703"; 
     let planName = "Optimization";
     let planPrice = "";
@@ -40,7 +36,6 @@ const OptimizationPurchasePage = () => {
     window.open(whatsappUrl, "_blank");
   };
 
-  // Get QR code based on selected plan
   const getQrCodeForPlan = () => {
     switch(selectedPlan) {
       case "basic":
@@ -54,7 +49,6 @@ const OptimizationPurchasePage = () => {
     }
   };
 
-  // Get price based on selected plan
   const getPriceForPlan = () => {
     switch(selectedPlan) {
       case "basic":
@@ -68,7 +62,6 @@ const OptimizationPurchasePage = () => {
     }
   };
 
-  // Helper function to highlight the selected plan
   const isPlanSelected = (plan) => {
     return selectedPlan === plan ? "selected-plan" : "";
   };
