@@ -12,7 +12,7 @@ const HomePage = () => {
       <div className="hero-section">
         <div className="hero-content">
           <div className="logo-container">
-            <img src="./src/images/SCRIPTERLOGO.jpg" alt="Scripter FFH4X Logo" className="hero-logo" />
+            <img src="/images/SCRIPTERLOGO.jpg" alt="Scripter FFH4X Logo" className="hero-logo" />
           </div>
           
           <div className="hero-text">

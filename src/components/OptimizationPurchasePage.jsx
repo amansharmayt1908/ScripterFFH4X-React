@@ -44,13 +44,13 @@ const OptimizationPurchasePage = () => {
   const getQrCodeForPlan = () => {
     switch(selectedPlan) {
       case "basic":
-        return "./src/images/basicPayOptimization.jpg"; // Replace with actual path
+        return "/images/basicPayOptimization.jpg";
       case "advance":
-        return "./src/images/advancePayOptimization.jpg"; // Replace with actual path
+        return "/images/advancePayOptimization.jpg";
       case "supreme":
-        return "./src/images/supremePayOptimization.jpg"; // Replace with actual path
+        return "/images/supremePayOptimization.jpg";
       default:
-        return "./src/images/defaultPayOptimization.jpg"; // Replace with actual path
+        return "/images/defaultPayOptimization.jpg";
     }
   };
 

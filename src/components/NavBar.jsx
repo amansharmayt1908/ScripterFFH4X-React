@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-        <div className="nav-channel-logo" onClick={() => {window.open("https://www.youtube.com/@ScripterFFH4X" , "_blank", "noopener,noreferrer")}}><img src="./src/images/SCRIPTERLOGO.jpg" alt="image not found" />SCRIPTER FFH4X</div>
+        <div className="nav-channel-logo" onClick={() => {window.open("https://www.youtube.com/@ScripterFFH4X" , "_blank", "noopener,noreferrer")}}><img src="/images/SCRIPTERLOGO.jpg" alt="image not found" />SCRIPTER FFH4X</div>
       
       <div className={`nav-links ${isOpen ? "open" : ""}`}>
         <a href="/">Home</a>
