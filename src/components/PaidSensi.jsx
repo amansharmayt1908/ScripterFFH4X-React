@@ -1,25 +1,35 @@
 import React, { useState } from "react";
 import "./PaidSensi.css";
 import NavBar from "./NavBar";
+import { useNavigate } from "react-router-dom";
 
 const PaidSensi = () => {
-  const [SensiDetail, setSensiDetail] = useState("CHOOSE YOUR SENSI PLAN");
+  const [sensiDetail, setSensiDetail] = useState("CHOOSE YOUR SENSI PLAN");
   const [fade, setFade] = useState(false);
-  const [basicText, setBasicText] = useState("BASIC SENSI");
-  const [advanceText, setAdvanceText] = useState("ADVANCE SENSI");
-  const [supremeText, setSupremeText] = useState("SUPREME SENSI");
+  const [selectedPlan, setSelectedPlan] = useState(null);
+  
+  // Add navigate hook for routing
+  const navigate = useNavigate();
 
-  const updateSensiDetail = (text) => {
+  const updateSensiDetail = (text, plan) => {
     setFade(true);
+    setSelectedPlan(plan);
     setTimeout(() => {
       setSensiDetail(text);
       setFade(false);
-    }, 500); // Wait for fade-out before updating text
+    }, 500);
+  };
+
+  // Function to handle purchase button clicks
+  const handlePurchaseClick = (plan) => {
+    navigate(`/purchase?plan=${plan}`);
   };
 
   const BasicText = (
-    <div className="BasicText">
-      <h2>WHAT WILL YOU GET?</h2>
+    <div className="sensi-detail-content">
+      <h2>BASIC SENSI PACKAGE</h2>
+      <div className="price-tag">₹199</div>
+      <h3>WHAT WILL YOU GET?</h3>
       <ul>
         <li>BASIC SENSI ZIP FILE</li>
         <li id="liveSupport">NO LIVE SUPPORT FROM MY TEAM</li>
@@ -33,12 +43,20 @@ const PaidSensi = () => {
         <li>BAT FILES</li>
         <li>KEYMAPING</li>
       </ul>
+      <button 
+        className="purchase-button"
+        onClick={() => handlePurchaseClick("basic")}
+      >
+        PURCHASE NOW ₹199
+      </button>
     </div>
   );
 
   const AdvanceText = (
-    <div className="AdvanceText">
-      <h2>WHAT WILL YOU GET?</h2>
+    <div className="sensi-detail-content">
+      <h2>ADVANCE SENSI PACKAGE</h2>
+      <div className="price-tag">₹399</div>
+      <h3>WHAT WILL YOU GET?</h3>
       <ul>
         <li>ADVANCE SENSI ZIP FILE</li>
         <li id="liveSupport">LIVE SUPPORT FROM MY TEAM</li>
@@ -55,12 +73,20 @@ const PaidSensi = () => {
         <li>ADVANCE BAT FILES</li>
         <li>ADVANCE KEYMAPING</li>
       </ul>
+      <button 
+        className="purchase-button"
+        onClick={() => handlePurchaseClick("advance")}
+      >
+        PURCHASE NOW ₹399
+      </button>
     </div>
   );
 
   const SupremeText = (
-    <div className="SupremeText">
-      <h2>WHAT WILL YOU GET?</h2>
+    <div className="sensi-detail-content">
+      <h2>SUPREME SENSI PACKAGE</h2>
+      <div className="price-tag">₹499</div>
+      <h3>WHAT WILL YOU GET?</h3>
       <ul>
         <li>ALL ADVANCE SENSI FILES</li>
         <li id="liveSupport">LIVE SUPPORT FROM MY TEAM</li>
@@ -71,57 +97,65 @@ const PaidSensi = () => {
         <li>KAI XD PAID SENSI</li>
         <li>VIREN GAMER PAID SENSI</li>
       </ul>
+      <button 
+        className="purchase-button"
+        onClick={() => handlePurchaseClick("supreme")}
+      >
+        PURCHASE NOW ₹499
+      </button>
     </div>
   );
 
+  // Helper function to check if a plan is selected
+  const isPlanSelected = (plan) => {
+    return selectedPlan === plan ? "selected-plan" : "";
+  };
+
   return (
-    <div>
+    <div className="paid-sensi-page">
       <NavBar />
-      <div className="ps-main-container">
-        <div className="ps-container-1">
-          <div
-            className="ps-basic-container"
-            onMouseEnter={() => {
-              updateSensiDetail(BasicText);
-              setBasicText("PURCHASE ₹ 199💸");
-            }}
-            onMouseLeave={() => {
-              updateSensiDetail("CHOOSE YOUR SENSI PLAN");
-              setBasicText("BASIC SENSI");
-            }}
-          >
-            <h1>{basicText}</h1>
+      <div className="sensi-container">
+        <h1 className="sensi-title">Choose Your Sensi Plan</h1>
+        
+        <div className="sensi-content">
+          <div className="sensi-plans">
+            <div 
+              className={`sensi-plan-card ${isPlanSelected("basic")}`}
+              onClick={() => updateSensiDetail(BasicText, "basic")}
+            >
+              <h3>BASIC SENSI</h3>
+              <div className="plan-price">₹199</div>
+              <p>Perfect for beginners</p>
+            </div>
+            
+            <div 
+              className={`sensi-plan-card ${isPlanSelected("advance")}`}
+              onClick={() => updateSensiDetail(AdvanceText, "advance")}
+            >
+              <h3>ADVANCE SENSI</h3>
+              <div className="plan-price">₹399</div>
+              <p>For serious players</p>
+            </div>
+            
+            <div 
+              className={`sensi-plan-card ${isPlanSelected("supreme")}`}
+              onClick={() => updateSensiDetail(SupremeText, "supreme")}
+            >
+              <h3>SUPREME SENSI</h3>
+              <div className="plan-price">₹499</div>
+              <p>Ultimate performance</p>
+            </div>
           </div>
-          <div
-            className="ps-advance-container"
-            onMouseEnter={() => {
-              updateSensiDetail(AdvanceText);
-              setAdvanceText("PURCHASE ₹ 399💸");
-            }}
-            onMouseLeave={() => {
-              updateSensiDetail("CHOOSE YOUR SENSI PLAN");
-              setAdvanceText("ADVANCE SENSI");
-            }}
-          >
-            <h1>{advanceText}</h1>
-          </div>
-          <div
-            className="ps-supreme-container"
-            onMouseEnter={() => {
-              updateSensiDetail(SupremeText);
-              setSupremeText("PURCHASE ₹ 499💸");
-            }}
-            onMouseLeave={() => {
-              updateSensiDetail("CHOOSE YOUR SENSI PLAN");
-              setSupremeText("SUPREME SENSI");
-            }}
-          >
-            <h1>{supremeText}</h1>
-          </div>
-        </div>
-        <div className="ps-container-2">
-          <div className={`ps-detail-container ${fade ? "fade-out" : "fade-in"}`}>
-            {typeof SensiDetail === 'string' ? <h1>{SensiDetail}</h1> : SensiDetail}
+          
+          <div className="sensi-details">
+            <div className={`sensi-detail-container ${fade ? "fade-out" : "fade-in"}`}>
+              {typeof sensiDetail === 'string' ? (
+                <div className="sensi-welcome">
+                  <h2>{sensiDetail}</h2>
+                  <p>Click on any plan above to see detailed features</p>
+                </div>
+              ) : sensiDetail}
+            </div>
           </div>
         </div>
       </div>

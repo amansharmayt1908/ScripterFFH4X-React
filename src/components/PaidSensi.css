@@ -1,89 +1,219 @@
-.ps-main-container{
-    height: 87vh;
-    width: 99vw;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 1px solid rgb(255, 255, 255);
+/* Main container styles */
+.paid-sensi-page {
+  color: white;
+  min-height: 100vh;
+  background-color: #121212;
 }
 
-.ps-container-1{
-    border: 1px solid rgb(255, 255, 255);
-    width: 30rem;
-    height: 30rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-
+.sensi-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
-.ps-container-2{
-    border: 1px solid rgb(255, 255, 255);
-    width: 30rem;
-    height: 30rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+.sensi-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #f8f8f8;
+  text-transform: uppercase;
 }
 
-.ps-basic-container,.ps-advance-container,.ps-supreme-container{
-    border: 1px solid rgb(255, 255, 255);
-    width: 20rem;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    
+.sensi-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
-.BasicText{
-    font-size: 1.3rem;
+/* Plan cards section */
+.sensi-plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
-.AdvanceText{
-    font-size: 1.2rem;
+.sensi-plan-card {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.SupremeText{
-    font-size: 1.5rem;
+.sensi-plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
-#liveSupport{
-    color: red;
+.sensi-plan-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #f8f8f8;
 }
 
-.ps-basic-container:hover{
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-}
-.ps-advance-container:hover{
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-}
-.ps-supreme-container:hover{
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+.plan-price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4CAF50;
+  margin-bottom: 1rem;
 }
 
-.ps-detail-container h1 {
-    font-size: 1.9rem;
-    font-weight: bold;
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+.sensi-plan-card p {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Selected plan styling */
+.selected-plan {
+  border: 2px solid #4CAF50;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.selected-plan::before {
+  content: "Selected";
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  background: #4CAF50;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Details section */
+.sensi-details {
+  margin-top: 2rem;
+}
+
+.sensi-detail-container {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 2rem;
+  min-height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sensi-welcome {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 300px;
+}
+
+.sensi-welcome h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.sensi-welcome p {
+  color: #aaa;
+  font-size: 1.1rem;
+}
+
+/* Detail content styling */
+.sensi-detail-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.sensi-detail-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #f8f8f8;
+  text-align: center;
+}
+
+.sensi-detail-content h3 {
+  font-size: 1.3rem;
+  margin: 1.5rem 0 1rem;
+  color: #f8f8f8;
+}
+
+.price-tag {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.sensi-detail-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sensi-detail-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+#liveSupport {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.purchase-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  align-self: center;
+}
+
+.purchase-button:hover {
+  background: #3e8e41;
+}
+
+/* Fade animations */
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+/* Media queries for responsive design */
+@media (min-width: 768px) {
+  .sensi-content {
+    grid-template-columns: 1fr;
   }
   
-  .ps-detail-container.fade-out h1 {
-    opacity: 0;
-    transform: translateY(-10px);
+  .sensi-plans {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .sensi-container {
+    padding: 3rem 2rem;
   }
   
-  .ps-detail-container.fade-in h1 {
-    opacity: 1;
-    transform: translateY(0);
+  .sensi-content {
+    grid-template-columns: 1fr;
   }
+  
+  .sensi-detail-container {
+    min-height: 400px;
+  }
+}
   
