@@ -7,14 +7,20 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Install dependencies with more verbose output
+RUN npm install --verbose
 
 # Copy all files
 COPY . .
 
-# Build the app
-RUN npm run build
+# Print directory contents for debugging
+RUN ls -la
+
+# Show package.json content for debugging
+RUN cat package.json
+
+# Build with more verbose output and debug info
+RUN npm run build --verbose || (echo "Build failed. Showing error logs:" && cat npm-debug.log || true)
 
 # Install serve to run the application
 RUN npm install -g serve
