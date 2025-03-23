@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./PurchasePage.css";
+import "./OptimizationPurchasePage.css";
 import NavBar from "./NavBar";
 import { Link, useLocation } from "react-router-dom";
 
-const PurchasePage = () => {
+const OptimizationPurchasePage = () => {
   const location = useLocation();
   const [selectedPlan, setSelectedPlan] = useState(null);
   
@@ -12,7 +12,8 @@ const PurchasePage = () => {
     const queryParams = new URLSearchParams(location.search);
     const plan = queryParams.get('plan');
     if (plan) {
-      setSelectedPlan(plan);
+      // Remove the "-optimization" suffix if present
+      setSelectedPlan(plan.replace('-optimization', ''));
     }
   }, [location]);
 
@@ -20,18 +21,18 @@ const PurchasePage = () => {
   const handleWhatsAppClick = () => {
     // Replace with your actual WhatsApp number
     const phoneNumber = "916205290703"; 
-    let planName = "Sensi";
+    let planName = "Optimization";
     let planPrice = "";
     
     if (selectedPlan === "basic") {
-      planName = "Basic Sensi";
-      planPrice = "₹199";
+      planName = "Basic Optimization";
+      planPrice = "₹299";
     } else if (selectedPlan === "advance") {
-      planName = "Advance Sensi";
-      planPrice = "₹399";
+      planName = "Advance Optimization";
+      planPrice = "₹599";
     } else if (selectedPlan === "supreme") {
-      planName = "Supreme Sensi";
-      planPrice = "₹499";
+      planName = "Supreme Optimization";
+      planPrice = "₹999";
     }
     
     const message = `Hello, I've made a payment of ${planPrice} for the ${planName} package. Here's my payment screenshot.`;
@@ -43,13 +44,13 @@ const PurchasePage = () => {
   const getQrCodeForPlan = () => {
     switch(selectedPlan) {
       case "basic":
-        return "./src/images/basicPaySensi.jpg"; // Replace with actual path
+        return "./src/images/basicPayOptimization.jpg"; // Replace with actual path
       case "advance":
-        return "./src/images/advancePaySensi.jpg"; // Replace with actual path
+        return "./src/images/advancePayOptimization.jpg"; // Replace with actual path
       case "supreme":
-        return "./src/images/supremePaySensi.jpg"; // Replace with actual path
+        return "./src/images/supremePayOptimization.jpg"; // Replace with actual path
       default:
-        return "/path-to-default-qr-code.png"; // Replace with actual path
+        return "./src/images/defaultPayOptimization.jpg"; // Replace with actual path
     }
   };
 
@@ -57,11 +58,11 @@ const PurchasePage = () => {
   const getPriceForPlan = () => {
     switch(selectedPlan) {
       case "basic":
-        return "₹199";
+        return "₹299";
       case "advance":
-        return "₹399";
+        return "₹599";
       case "supreme":
-        return "₹499";
+        return "₹999";
       default:
         return "";
     }
@@ -73,81 +74,81 @@ const PurchasePage = () => {
   };
 
   return (
-    <div>
+    <div className="optimization-purchase-page">
       <NavBar />
-      <div className="purchase-container">
-        <h1 className="purchase-title">Complete Your Purchase</h1>
+      <div className="optimization-purchase-container">
+        <h1 className="optimization-purchase-title">Complete Your Optimization Purchase</h1>
         
-        <div className="purchase-content">
-          <div className="qr-section">
+        <div className="optimization-purchase-content">
+          <div className="optimization-qr-section">
             <h2>Scan QR Code to Pay {getPriceForPlan()}</h2>
-            <div className="qr-placeholder">
+            <div className="optimization-qr-placeholder">
               <img 
                 src={getQrCodeForPlan()} 
                 alt={`Payment QR Code for ${selectedPlan || 'default'} plan`} 
-                className="qr-image"
+                className="optimization-qr-image"
               />
               <p>Or pay directly to UPI ID: amansharmayt19@okicici</p>
             </div>
-            <button className="whatsapp-button" onClick={handleWhatsAppClick}>
+            <button className="optimization-whatsapp-button" onClick={handleWhatsAppClick}>
               <i className="fa fa-whatsapp"></i> Send Payment Screenshot
             </button>
           </div>
           
-          <div className="pricing-section">
-            <h2>Select Your Plan</h2>
-            <div className="price-cards">
+          <div className="optimization-pricing-section">
+            <h2>Select Your Optimization Plan</h2>
+            <div className="optimization-price-cards">
               <div 
-                className={`price-card ${isPlanSelected("basic")}`}
+                className={`optimization-price-card ${isPlanSelected("basic")}`}
                 onClick={() => setSelectedPlan("basic")}
               >
-                <h3>BASIC SENSI</h3>
-                <div className="price">₹199</div>
-                <Link to="/PaidSensi" className="back-link">View Details</Link>
+                <h3>BASIC OPTIMIZATION</h3>
+                <div className="optimization-price">₹299</div>
+                <Link to="/PaidOptimization" className="optimization-back-link">View Details</Link>
               </div>
               
               <div 
-                className={`price-card ${isPlanSelected("advance")}`}
+                className={`optimization-price-card ${isPlanSelected("advance")}`}
                 onClick={() => setSelectedPlan("advance")}
               >
-                <h3>ADVANCE SENSI</h3>
-                <div className="price">₹399</div>
-                <Link to="/PaidSensi" className="back-link">View Details</Link>
+                <h3>ADVANCE OPTIMIZATION</h3>
+                <div className="optimization-price">₹599</div>
+                <Link to="/PaidOptimization" className="optimization-back-link">View Details</Link>
               </div>
               
               <div 
-                className={`price-card ${isPlanSelected("supreme")}`}
+                className={`optimization-price-card ${isPlanSelected("supreme")}`}
                 onClick={() => setSelectedPlan("supreme")}
               >
-                <h3>SUPREME SENSI</h3>
-                <div className="price">₹499</div>
-                <Link to="/PaidSensi" className="back-link">View Details</Link>
+                <h3>SUPREME OPTIMIZATION</h3>
+                <div className="optimization-price">₹999</div>
+                <Link to="/PaidOptimization" className="optimization-back-link">View Details</Link>
               </div>
             </div>
           </div>
           
-          <div className="instructions-section">
+          <div className="optimization-instructions-section">
             <h2>How to Complete Your Purchase</h2>
-            <ol className="steps">
+            <ol className="optimization-steps">
               <li>
-                <span className="step-number">1</span>
-                <div className="step-content">
+                <span className="optimization-step-number">1</span>
+                <div className="optimization-step-content">
                   <h3>Select Your Package</h3>
-                  <p>Choose one of the Sensi packages above.</p>
+                  <p>Choose one of the Optimization packages above.</p>
                 </div>
               </li>
               
               <li>
-                <span className="step-number">2</span>
-                <div className="step-content">
+                <span className="optimization-step-number">2</span>
+                <div className="optimization-step-content">
                   <h3>Make Payment</h3>
                   <p>Scan the QR code to pay the exact amount.</p>
                 </div>
               </li>
               
               <li>
-                <span className="step-number">3</span>
-                <div className="step-content">
+                <span className="optimization-step-number">3</span>
+                <div className="optimization-step-content">
                   <h3>Send Screenshot</h3>
                   <p>Send your payment screenshot via WhatsApp to receive your files.</p>
                 </div>
@@ -160,4 +161,4 @@ const PurchasePage = () => {
   );
 };
 
-export default PurchasePage;
+export default OptimizationPurchasePage; 

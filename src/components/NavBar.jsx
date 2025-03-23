@@ -9,10 +9,10 @@ const Navbar = () => {
         <div className="nav-channel-logo" onClick={() => {window.open("https://www.youtube.com/@ScripterFFH4X" , "_blank", "noopener,noreferrer")}}><img src="./src/images/SCRIPTERLOGO.jpg" alt="image not found" />SCRIPTER FFH4X</div>
       
       <div className={`nav-links ${isOpen ? "open" : ""}`}>
-        <a href="#home">Home</a>
+        <a href="/">Home</a>
         <a href="#about">YOUTUBE</a>
         <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <a href="https://www.instagram.com/scripter.js/" target="_blank">Contact</a>
       </div>
       <div className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
         ☰

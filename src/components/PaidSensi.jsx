@@ -143,8 +143,19 @@ const PaidSensi = () => {
             >
               <h3>SUPREME SENSI</h3>
               <div className="plan-price">₹499</div>
-              <p>Ultimate performance</p>
+              <p>Ultimate headshot</p>
             </div>
+          </div>
+          
+          <div className="youtube-button-container">
+            <a 
+              href="https://www.youtube.com/@ScripterFFH4X" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="youtube-button"
+            >
+              <i className="fa fa-youtube-play"></i> Watch Sensi Tutorials
+            </a>
           </div>
           
           <div className="sensi-details">
