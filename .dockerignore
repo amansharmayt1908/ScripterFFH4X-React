@@ -1,8 +1,9 @@
 node_modules
-npm-debug.log
-build
+dist
 .git
 .github
 .gitignore
 README.md
-.DS_Store 
+.DS_Store
+npm-debug.log
+yarn-error.log 

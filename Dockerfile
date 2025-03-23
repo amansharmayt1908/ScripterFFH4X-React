@@ -1,32 +1,38 @@
-# Use Node.js as the base image
-FROM node:18-alpine
+# Build stage
+FROM node:18-alpine as build
 
 # Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy package files
 COPY package*.json ./
 
-# Install dependencies with more verbose output
-RUN npm install --verbose
+# Install dependencies
+RUN npm install
 
-# Copy all files
+# Copy all project files
 COPY . .
 
-# Print directory contents for debugging
-RUN ls -la
+# Build the Vite app
+RUN npm run build
 
-# Show package.json content for debugging
-RUN cat package.json
+# Production stage
+FROM node:18-alpine as production
 
-# Build with more verbose output and debug info
-RUN npm run build --verbose || (echo "Build failed. Showing error logs:" && cat npm-debug.log || true)
+# Set working directory
+WORKDIR /app
 
-# Install serve to run the application
+# Install serve globally
 RUN npm install -g serve
 
-# Expose the port that serve will use
+# Copy built files from build stage
+COPY --from=build /app/dist ./dist
+
+# Create a serve.json for SPA routing
+RUN echo '{"rewrites": [{"source": "/**", "destination": "/index.html"}]}' > ./dist/serve.json
+
+# Expose port
 EXPOSE 10000
 
-# Start the application using serve
+# Start the app
 CMD ["serve", "-s", "dist", "-l", "10000"] 
