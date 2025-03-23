@@ -1,38 +1,28 @@
-# Build stage
-FROM node:18-alpine as build
+FROM node:18-alpine AS build
 
 # Set working directory
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# Copy package.json and package-lock.json
+COPY package.json package-lock.json ./
 
 # Install dependencies
 RUN npm install
 
-# Copy all project files
+# Copy the rest of the app's source code
 COPY . .
 
-# Build the Vite app
+# Build the app
 RUN npm run build
 
-# Production stage
-FROM node:18-alpine as production
+# Use nginx to serve the build
+FROM nginx:alpine
 
-# Set working directory
-WORKDIR /app
+# Copy the built files from the previous stage
+COPY --from=build /app/dist /usr/share/nginx/html
 
-# Install serve globally
-RUN npm install -g serve
+# Expose port 80
+EXPOSE 80
 
-# Copy built files from build stage
-COPY --from=build /app/dist ./dist
-
-# Create a serve.json for SPA routing
-RUN echo '{"rewrites": [{"source": "/**", "destination": "/index.html"}]}' > ./dist/serve.json
-
-# Expose port
-EXPOSE 10000
-
-# Start the app
-CMD ["serve", "-s", "dist", "-l", "10000"] 
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
