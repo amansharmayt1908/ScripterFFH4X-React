@@ -37,6 +37,23 @@
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease;
+    
+}
+
+.BasicText{
+    font-size: 1.3rem;
+}
+
+.AdvanceText{
+    font-size: 1.2rem;
+}
+
+.SupremeText{
+    font-size: 1.5rem;
+}
+
+#liveSupport{
+    color: red;
 }
 
 .ps-basic-container:hover{
@@ -53,7 +70,7 @@
 }
 
 .ps-detail-container h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-weight: bold;
     opacity: 1;
     transform: translateY(0);
