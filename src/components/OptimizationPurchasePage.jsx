@@ -50,7 +50,7 @@ const OptimizationPurchasePage = () => {
       case "supreme":
         return "/images/supremePayOptimization.jpg";
       default:
-        return "/images/defaultPayOptimization.jpg";
+        return "/images/supremePayOptimization.jpg";
     }
   };
 
