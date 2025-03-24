@@ -39,13 +39,13 @@ const PurchasePage = () => {
   const getQrCodeForPlan = () => {
     switch(selectedPlan) {
       case "basic":
-        return "/images/basicPaySensi.jpg";
+        return "/images/temp.jpg";
       case "advance":
-        return "/images/advancePaySensi.jpg";
+        return "/images/temp.jpg";
       case "supreme":
-        return "/images/supremePaySensi.jpg";
+        return "/images/temp.jpg";
       default:
-        return "/images/defaultPaySensi.jpg";
+        return "/images/temp.jpg";
     }
   };
 

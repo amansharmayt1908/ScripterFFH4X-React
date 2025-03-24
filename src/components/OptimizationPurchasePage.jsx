@@ -39,13 +39,13 @@ const OptimizationPurchasePage = () => {
   const getQrCodeForPlan = () => {
     switch(selectedPlan) {
       case "basic":
-        return "/images/basicPayOptimization.jpg";
+        return "/images/temp.jpg";
       case "advance":
-        return "/images/advancePayOptimization.jpg";
+        return "/images/temp.jpg";
       case "supreme":
-        return "/images/supremePayOptimization.jpg";
+        return "/images/temp.jpg";
       default:
-        return "/images/supremePayOptimization.jpg";
+        return "/images/temp.jpg";
     }
   };
 
