@@ -81,7 +81,7 @@ const PurchasePage = () => {
                 alt={`Payment QR Code for ${selectedPlan || 'default'} plan`} 
                 className="qr-image"
               />
-              <p>Or pay directly to UPI ID: amansharmayt19@okicici</p>
+              <p>Or pay directly to UPI ID: amansharmayt19-1@oksbi</p>
             </div>
             <button className="whatsapp-button" onClick={handleWhatsAppClick}>
               <i className="fa fa-whatsapp"></i> Send Payment Screenshot
