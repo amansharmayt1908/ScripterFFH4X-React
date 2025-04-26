@@ -58,6 +58,8 @@ const PaidOptimization = () => {
         <li>ADVANCE OPTIMIZATION ZIP FILE</li>
         <li id="liveSupport">LIVE SUPPORT FROM MY TEAM</li>
         <li>PREMIUM GAME BOOSTER</li>
+        <li>OPTIMIZERS SOFTWARE</li>
+        <li>CUSTOM OPERATING SYSTEM</li>
         <li>ULTRA FPS BOOST</li>
         <li>EMULATOR optimization</li>
         <li id="liveSupport">90-100 FPS WHITHOUT GRAPHICS CARD</li>
