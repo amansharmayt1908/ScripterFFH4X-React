@@ -31,7 +31,7 @@ const YoutubeLinks = () => {
         {
             url: "https://just2earn.com/scriptex_pro",
             type: "other",
-            icon: "src\\images\\link.png",
+            icon: "src//LinkImg//link.png",
             text: "ScripteX Pro Optimizer"
         }
     ];
