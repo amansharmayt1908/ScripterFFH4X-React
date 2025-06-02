@@ -29,6 +29,11 @@ const HomePage = () => {
             Paid Optimization
           </Link>
         </div>
+        <div className="cta-buttons">
+          <Link to={"/Links"} className="cta-button primary" id='links'>
+            Youtube Links
+          </Link>
+        </div>
       </div>
       
       <div className="features-section">
