@@ -33,6 +33,12 @@ const YoutubeLinks = () => {
             type: "other",
             icon: "https://cdn-icons-png.flaticon.com/512/4906/4906292.png",
             text: "ScripteX Pro Optimizer"
+        },
+        {
+            url: "https://just2earn.com/fps_boost_files",
+            type: "other",
+            icon: "https://cdn-icons-png.flaticon.com/512/4906/4906292.png",
+            text: "FPS Booster Files"
         }
     ];
 
