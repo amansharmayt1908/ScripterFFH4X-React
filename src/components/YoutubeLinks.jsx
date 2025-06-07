@@ -39,6 +39,12 @@ const YoutubeLinks = () => {
             type: "other",
             icon: "https://cdn-icons-png.flaticon.com/512/4906/4906292.png",
             text: "Mouse Enhance Files"
+        },
+        {
+            url: "https://www.mediafire.com/file/3uxq4tfqngfvhq8/PCOptimizer.rar/file",
+            type: "other",
+            icon: "https://cdn-icons-png.flaticon.com/512/4906/4906292.png",
+            text: "Optimizer - Mediafire"
         }
     ];
 
