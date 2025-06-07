@@ -41,7 +41,7 @@ const YoutubeLinks = () => {
             text: "FPS Booster Files"
         },
         {
-            url: "https://just2earn.com/mouse_enhance",
+            url: "https://just2earn.com/mouse_enhance_2",
             type: "other",
             icon: "https://cdn-icons-png.flaticon.com/512/4906/4906292.png",
             text: "Mouse Enhance Files"
