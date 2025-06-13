@@ -45,6 +45,12 @@ const YoutubeLinks = () => {
             type: "other",
             icon: "https://cdn-icons-png.flaticon.com/512/4906/4906292.png",
             text: "Optimizer - Mediafire"
+        },
+        {
+            url: "https://www.mediafire.com/file/0w7m90j70huyo0s/fILEs%25282%2529.rar/file",
+            type: "other",
+            icon: "https://cdn-icons-png.flaticon.com/512/4906/4906292.png",
+            text: "Latest Video Files - Mediafire"
         }
     ];
 
