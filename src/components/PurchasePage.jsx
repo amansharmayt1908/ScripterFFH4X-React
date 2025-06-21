@@ -22,13 +22,13 @@ const PurchasePage = () => {
     
     if (selectedPlan === "basic") {
       planName = "Basic Sensi";
-      planPrice = "₹199";
+      planPrice = "₹299";
     } else if (selectedPlan === "advance") {
       planName = "Advance Sensi";
-      planPrice = "₹399";
+      planPrice = "₹499";
     } else if (selectedPlan === "supreme") {
       planName = "Supreme Sensi";
-      planPrice = "₹499";
+      planPrice = "₹599";
     }
     
     const message = `Hello, I've made a payment of ${planPrice} for the ${planName} package. Here's my payment screenshot.`;
@@ -52,11 +52,11 @@ const PurchasePage = () => {
   const getPriceForPlan = () => {
     switch(selectedPlan) {
       case "basic":
-        return "₹199";
+        return "₹299";
       case "advance":
-        return "₹399";
-      case "supreme":
         return "₹499";
+      case "supreme":
+        return "₹599";
       default:
         return "";
     }
@@ -96,7 +96,7 @@ const PurchasePage = () => {
                 onClick={() => setSelectedPlan("basic")}
               >
                 <h3>BASIC SENSI</h3>
-                <div className="price">₹199</div>
+                <div className="price">₹299</div>
                 <Link to="/PaidSensi" className="back-link">View Details</Link>
               </div>
               
@@ -105,7 +105,7 @@ const PurchasePage = () => {
                 onClick={() => setSelectedPlan("advance")}
               >
                 <h3>ADVANCE SENSI</h3>
-                <div className="price">₹399</div>
+                <div className="price">₹499</div>
                 <Link to="/PaidSensi" className="back-link">View Details</Link>
               </div>
               
@@ -114,7 +114,7 @@ const PurchasePage = () => {
                 onClick={() => setSelectedPlan("supreme")}
               >
                 <h3>SUPREME SENSI</h3>
-                <div className="price">₹499</div>
+                <div className="price">₹599</div>
                 <Link to="/PaidSensi" className="back-link">View Details</Link>
               </div>
             </div>
