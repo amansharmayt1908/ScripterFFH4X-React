@@ -57,6 +57,12 @@ const YoutubeLinks = () => {
             type: "other",
             icon: "https://cdn-icons-png.flaticon.com/512/4906/4906292.png",
             text: "Bluestacks 4 best version - Mediafire"
+        },
+        {
+            url: "https://www.mediafire.com/file/1y9ii3b894awaam/bsPriority.rar/file",
+            type: "other",
+            icon: "https://cdn-icons-png.flaticon.com/512/4906/4906292.png",
+            text: "Bluestacks Priority bat file - Mediafire"
         }
     ];
 
