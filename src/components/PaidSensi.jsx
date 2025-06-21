@@ -28,7 +28,7 @@ const PaidSensi = () => {
   const BasicText = (
     <div className="sensi-detail-content">
       <h2>BASIC SENSI PACKAGE</h2>
-      <div className="price-tag">₹199</div>
+      <div className="price-tag">₹299</div>
       <h3>WHAT WILL YOU GET?</h3>
       <ul>
         <li>BASIC SENSI ZIP FILE</li>
@@ -47,7 +47,7 @@ const PaidSensi = () => {
         className="purchase-button"
         onClick={() => handlePurchaseClick("basic")}
       >
-        PURCHASE NOW ₹199
+        PURCHASE NOW ₹299
       </button>
     </div>
   );
@@ -55,7 +55,7 @@ const PaidSensi = () => {
   const AdvanceText = (
     <div className="sensi-detail-content">
       <h2>ADVANCE SENSI PACKAGE</h2>
-      <div className="price-tag">₹399</div>
+      <div className="price-tag">₹499</div>
       <h3>WHAT WILL YOU GET?</h3>
       <ul>
         <li>ADVANCE SENSI ZIP FILE</li>
@@ -77,7 +77,7 @@ const PaidSensi = () => {
         className="purchase-button"
         onClick={() => handlePurchaseClick("advance")}
       >
-        PURCHASE NOW ₹399
+        PURCHASE NOW ₹499
       </button>
     </div>
   );
@@ -85,7 +85,7 @@ const PaidSensi = () => {
   const SupremeText = (
     <div className="sensi-detail-content">
       <h2>SUPREME SENSI PACKAGE</h2>
-      <div className="price-tag">₹499</div>
+      <div className="price-tag">₹599</div>
       <h3>WHAT WILL YOU GET?</h3>
       <ul>
         <li>ALL ADVANCE SENSI FILES</li>
@@ -101,7 +101,7 @@ const PaidSensi = () => {
         className="purchase-button"
         onClick={() => handlePurchaseClick("supreme")}
       >
-        PURCHASE NOW ₹499
+        PURCHASE NOW ₹599
       </button>
     </div>
   );
@@ -124,7 +124,7 @@ const PaidSensi = () => {
               onClick={() => updateSensiDetail(BasicText, "basic")}
             >
               <h3>BASIC SENSI</h3>
-              <div className="plan-price">₹199</div>
+              <div className="plan-price">₹299</div>
               <p>Perfect for beginners</p>
             </div>
             
@@ -133,7 +133,7 @@ const PaidSensi = () => {
               onClick={() => updateSensiDetail(AdvanceText, "advance")}
             >
               <h3>ADVANCE SENSI</h3>
-              <div className="plan-price">₹399</div>
+              <div className="plan-price">₹499</div>
               <p>For serious players</p>
             </div>
             
@@ -142,7 +142,7 @@ const PaidSensi = () => {
               onClick={() => updateSensiDetail(SupremeText, "supreme")}
             >
               <h3>SUPREME SENSI</h3>
-              <div className="plan-price">₹499</div>
+              <div className="plan-price">₹599</div>
               <p>Ultimate headshot</p>
             </div>
           </div>
